@@ -49,34 +49,23 @@ piExp = (sum(condC)/N)*((b-a)^2/4);
 
 %% parte 3 - dados
 
-p66Teorica = ((658*10^15)+(1.013*10^18)+(511*10^15)+(112*10^15)+(11.97*10^15)+(660*10^12))/6^24; %está no caderno como
-
 clear, clc, close;
 
-N = 100000000;
+p66Teorica = ((658*10^15)+(1.013*10^18)+(511*10^15)+(112*10^15)+(11.97*10^15)+(660*10^12))/6^24; %está no caderno como
+
+N = 1000000;
+
+A = ceil( 6 * rand(N, 4));
+
+PA = sum(sum(A == 6, 2) > 0) / N
+
+B1 = ceil( 6 * rand(N, 24));
+B2 = ceil( 6 * rand(N, 24));
+
+PB = sum( sum( ((B1 == 6) & (B2 == 6)), 2) > 0) / N
 
 
-soma = 0;
-for i = 1:N
-    dados = ceil(6*rand(1,4));
-    cond6 = (dados == 6); %vetor com length de dados e 1 ou 0
-    soma = soma + sum(cond6);
-end
-
-p6 = soma/N
-
-
-soma = 0;
-for i = 1:N
-    dados1 = ceil(6*rand(1,24));
-    dados2 = ceil(6*rand(1,24));
-    cond66 = (dados1 == 6) & (dados2 == 6); %vetor com length de dados e 1 ou 0
-    soma = soma + sum(cond66);
-end
-
-p66 = soma/N
-
-vetor = [p6 p66];
+vetor = [PA PB];
 bar(vetor)
 
 %% parte 4

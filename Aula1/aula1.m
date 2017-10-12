@@ -2,7 +2,7 @@
 clear, clc, close all;
 %vai lançar 100 vezes uma moeda, seja 0-coroa e 1-cara
 soma = [];
-N = 100000;
+N = 1000;
 for j=1:5
     for i=1:N
         n = 100;
