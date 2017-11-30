@@ -5,8 +5,8 @@ soma = [];
 N = 1000;
 for j=1:5
     for i=1:N
-        n = 100;
-        x = round(rand(1,n)); %dá 1 valor entre 0 e 1 repetido 100 vezes
+        n = 10;
+        x = round(randn(1,n)); %dá 1 valor entre 0 e 1 repetido 100 vezes
         somaAux = sum(x);
         soma = [soma, somaAux];
     end
@@ -21,10 +21,10 @@ for j=1:5
     
     maxAux = maxX;
 
-    if mod(maxX - minX , LB) ~= 0
-        nBars = (maxX - minX) / LB;
-        maxAux = minX + nBars * LB;
-    end
+%     if mod(maxX - minX , LB) ~= 0
+%         nBars = (maxX - minX) / LB;
+%         maxAux = minX + nBars * LB;
+%     end
     
     fprintf('A gama de x varia entre %d e %d\n',minX, maxX); 
 
